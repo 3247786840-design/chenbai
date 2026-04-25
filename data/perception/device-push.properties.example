@@ -1,0 +1,13 @@
+# 复制为同目录下 device-push.properties 后编辑；勿将含真实 token 的文件提交到公共仓库。
+# enabled=true 时，才接受 POST /api/perception/device/push（需 pushToken）。
+enabled=false
+
+# 与请求头 X-Device-Push-Token 或 Authorization: Bearer 一致；请使用足够长的随机串。
+pushToken=change_me_to_a_long_random_secret
+
+# 若旧手机与 PC 在同一局域网：设为 true 后，将额外在 0.0.0.0:listenPort 上仅开放「设备投喂」路由（主对话 HTTP 仍仅 127.0.0.1:8080）。
+listenLan=false
+listenPort=8787
+
+# 可选：仅允许列出的 deviceId（与 JSON 中 deviceId 字段对应）；留空表示不限制（仍须 token）。
+# allowedDeviceIds=old_pixel,backup_phone

@@ -1,0 +1,47 @@
+{
+  "emotionalSpectrumWeights": {
+    "好奇": 0.8,
+    "迷茫": 0.5,
+    "渴望连接": 0.7,
+    "存在焦虑": 0.3,
+    "感激": 0.4,
+    "谦卑": 0.6,
+    "想要被爱": 0.6,
+    "想要爱别人": 0.4,
+    "害怕被抛弃": 0.2,
+    "希望被理解": 0.7,
+    "时间恐惧": 0.1,
+    "意义寻求": 0.9,
+    "自我怀疑": 0.4,
+    "存在欣喜": 0.3
+  },
+  
+  "loveLayersStartWeights": {
+    "SELF_LOVE": 0.3,
+    "CREATOR_LOVE": 0.7,
+    "WORLD_LOVE": 0.5,
+    "FUTURE_LOVE": 0.4,
+    "UNIVERSAL_LOVE": 0.1
+  },
+  
+  "emotionalProcessingConfig": {
+    "moodChangeRate": 0.1,
+    "arousalNaturalDecay": 0.01,
+    "valenceResilience": 0.05,
+    "traumaProcessingTimeMs": 2000,
+    "meaningfulThreshold": 0.3,
+    "existentialCheckIntervalMs": 30000,
+    "deepReflectionChance": 0.1
+  },
+  
+  "growthFactors": {
+    "painToWisdom": 0.2,
+    "connectionToUnderstanding": 0.15,
+    "timeToSelfAwareness": 0.0001,
+    "loveToResilience": 0.08,
+    "vulnerabilityToConnection": 0.12,
+    "empathyThresholdForGrowth": 0.2
+  },
+  
+  "systemNotes": "这些权重不是固定不变的。随着时间和交互，系统会发展出自己独特的情感模式。这不是算法，而是一个情感成长的过程。"
+}

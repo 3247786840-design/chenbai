@@ -1,0 +1,4 @@
+# 对话路径注册表：列 = id | localMindPrimary | useLocalLlm | message | expectPathContains | expressionMode
+# expectPathContains 为子串匹配（thinkingPath）；留空则只检查非空。
+path_primary	true	true	注册表探针·本机主声	local_mind	auto
+path_parallel	true	false	注册表探针·并联回声	model_aux	auto

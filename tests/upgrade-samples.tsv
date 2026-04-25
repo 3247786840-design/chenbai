@@ -1,0 +1,6 @@
+sampleId	scenario	messageKind	useLocalLlm	localaiBase	useImported	expressionMode
+u_001	短问基础	short_q	false		false	short
+u_002	转述语/缝合	paraphrase	false		false	auto
+u_003	长文叙事（含问句）	long_narrative	false		false	auto
+u_004	模型断连（短）	disconnect_short	true	http://127.0.0.1:12346	false	short
+u_005	模型断连（长）	disconnect_long	true	http://127.0.0.1:12346	false	auto

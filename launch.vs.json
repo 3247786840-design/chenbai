@@ -1,0 +1,14 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "default",
+      "name": "start.cmd（运行生命体，无 Java 源码断点）",
+      "project": "start.cmd",
+      "currentConfiguration": "Debug",
+      "inheritEnvironments": [],
+      "noDebug": true
+    }
+  ]
+}

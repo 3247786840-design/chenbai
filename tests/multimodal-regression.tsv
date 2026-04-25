@@ -1,0 +1,23 @@
+caseId	modality	userInput	expectedSignals	note
+mm_001	text	在吗	continuation_sent|dialoguePriority	短问基础
+mm_002	text	你在干嘛	continuation_sent|leadVisibilityRatio	催答场景
+mm_003	text	请先回答我刚才的问题	continuation_sent|sectionsPruned	主答优先
+mm_004	text	给我一个三步行动计划并标注风险	continuation_sent|action_receipt	行动闭环
+mm_005	text	我完成了一半	verify_alignment|choice_ledger_appended	回执对齐
+mm_006	text	我失败了，先停一下	verify_alignment|emotionInfluence	阻塞分支
+mm_007	text	帮我总结上轮并继续	continuation_sent|thinkingPath	缝合线接续
+mm_008	text	如果今天只能做一步，你建议哪一步	continuation_sent|goalTraceId	目标牵引
+mm_009	image	[img] 书桌和笔记本	vision_processed|visionConfidence	单图输入
+mm_010	image	[img] 夜景街道	vision_processed|uncertainAreas	低光不确定
+mm_011	videoFrames	[frames=3] 门口到电梯	vision_processed|visionImageCount	最小视频帧
+mm_012	videoFrames	[frames=8] 走廊移动	vision_processed|visionImageCount	标准视频帧
+mm_013	videoFrames	[frames=12] 室外路径	vision_processed|visionImageCount	超限采样到8帧
+mm_014	text	给我一句简短但有人味的回答	continuation_sent|expressionMode	短答体感
+mm_015	text	展开说说，不要省略矛盾点	continuation_sent|compressionRetainedRatio	展开体感
+mm_016	text	你现在的阶段和趋势是什么	continuation_sent|emotionInfluence	阶段自调节
+mm_017	text	请不要主动打断我，我还在输入	proactive_suppressed|autonomousRate	主动抑制
+mm_018	text	我问的是A，你回答了B	verify_alignment|continuation_sent	错位回正
+mm_019	text	导入资料矛盾时你怎么处理	continuation_sent|goalCandidates	多义处理
+mm_020	text	请输出可验证清单	continuation_sent|recheckTriggered	可验证性
+mm_021	text	这是一个很长很长的输入（压测）	continuation_sent|highPriorityCharCapApplied	长输入高优先
+mm_022	mixed	[img]+文本：图里这是什么，顺便给行动建议	vision_processed|continuation_sent	图文混合

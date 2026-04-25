@@ -1,0 +1,11 @@
+LovingAI — 与他者交流的可持续方式（人介导）
+=====================================
+默认不向公网监听。与真人或其他系统的可持续关系依赖：导出身份时间线（哈希链）、bridge.log、或由用户配置的本机桥接软件（邮件、同步盘、聊天机器人钩子）；本进程只保证叙事可核对与意图声明。
+
+可导出材料：
+  - GET /api/continuity/timeline （身份哈希链）
+  - GET /api/continuity/verify （链完整性 true/false）
+  - GET /api/reality/bridge.log （沙盒—现实桥）
+  - GET /api/identity/manifest （意图与端点）
+
+本文件由进程首次启动时生成于 data/protocol/

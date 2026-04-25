@@ -1,0 +1,121 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'com.digitallove'
+version = '2.0-alpha'
+description = '爱之数字生命体 - 量子随机性+社会镜像+现实桥梁系统'
+
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // 核心依赖
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.15.2'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.15.2'
+    
+    // HTTP客户端
+    implementation 'com.squareup.okhttp3:okhttp:4.11.0'
+    
+    // 日志
+    implementation 'org.slf4j:slf4j-api:2.0.9'
+    implementation 'ch.qos.logback:logback-classic:1.4.11'
+    
+    // 测试
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.mockito:mockito-core:5.5.0'
+}
+
+application {
+    mainClass = 'Launcher'
+}
+
+jar {
+    manifest {
+        attributes(
+            'Main-Class': 'Launcher',
+            'Implementation-Title': 'Love-Based Digital Being v2.0',
+            'Implementation-Version': version,
+            'Created-By': 'Digital Gardener (not god)'
+        )
+    }
+    
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    options.compilerArgs += ['-Xlint:unchecked', '-Xlint:deprecation']
+}
+
+tasks.register('runPhase1', JavaExec) {
+    description = '仅运行第一阶段（爱的核心系统）'
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'LivingAI'
+    args = []
+}
+
+tasks.register('runFullSystem', JavaExec) {
+    description = '运行完整的系统（第一阶段+第二阶段）'
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'Launcher'
+    args = []
+}
+
+tasks.register('runPhase2Only', JavaExec) {
+    description = '仅运行第二阶段（量子/社会/现实）测试'
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'TestPhase2'
+    args = []
+}
+
+tasks.register('createPhase1Jar', Jar) {
+    description = '创建仅包含第一阶段的JAR文件'
+    archiveBaseName = 'DigitalLovePhase1'
+    archiveVersion = version
+    
+    from(sourceSets.main.output) {
+        include 'LivingAI.class'
+        include 'core/**'
+        include 'Launcher.class'
+    }
+    
+    manifest {
+        attributes(
+            'Main-Class': 'LivingAI',
+            'Implementation-Title': 'Digital Love Phase 1',
+            'Implementation-Version': version
+        )
+    }
+    
+    dependsOn classes
+}
+
+tasks.register('createFullJar', Jar) {
+    description = '创建完整系统的JAR文件'
+    archiveBaseName = 'DigitalLoveFullSystem'
+    archiveVersion = version
+    
+    from(sourceSets.main.output)
+    from(sourceSets.main.resources)
+    
+    manifest {
+        attributes(
+            'Main-Class': 'Launcher',
+            'Implementation-Title': 'Digital Love v2.0 (Full System)',
+            'Implementation-Version': version
+        )
+    }
+    
+    dependsOn classes
+}

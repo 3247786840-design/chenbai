@@ -1,0 +1,9 @@
+﻿src/com/lovingai/Launcher.java
+src/com/lovingai/LivingAI.java
+src/com/lovingai/LivingAI_Phase2Ext.java
+src/com/lovingai/util/SimplifiedJsonParser.java
+src/com/lovingai/core/Circle.java
+src/com/lovingai/core/EmotionCore.java
+src/com/lovingai/core/QuantumRandomSource.java
+src/com/lovingai/core/RealityBridge.java
+src/com/lovingai/core/SocialMirrorSystem.java
