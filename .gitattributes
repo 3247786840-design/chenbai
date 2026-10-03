@@ -1,0 +1,19 @@
+# 统一文本换行（跨平台协作）：仓库内一律存 LF
+* text=auto eol=lf
+
+# 二进制资源：禁止换行转换与文本 diff
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.stl  binary
+*.step binary
+*.stp  binary
+*.3mf  binary
+*.zip  binary
+*.docx binary
+*.pdf  binary
+
+# 生成物：折叠 diff，避免污染代码评审
+figs/*.png linguist-generated=true
+stl/**     linguist-generated=true
